@@ -28,4 +28,16 @@
 ```solidity
 (keccak256(sandwich) == keccak256("BLT")
 ```
-   
+
+## 关于事件
+当事件被触发时，会触发参数存储到交易的日志中，这些日志与合约的地址相关联，并记录到区块链中。
+```solidity
+event myEvent(address _myaddress,uint _myNumber)
+```
+触发事件可以在任何函数中调用
+```solidity
+function testEvent() public{
+  emit myEvent(addressName,NumberName);
+}
+```
+### 事件监听
