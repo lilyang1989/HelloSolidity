@@ -41,3 +41,17 @@ function testEvent() public{
 }
 ```
 ### 事件监听
+先留个坑
+
+### 函数修饰符
+用来修饰已有函数用的，最常见的情况是放在函数执行之前添加快速的require检查
+```solidity
+modifier onlyOwner(){
+  require(msg.sender == owener);
+  _; //执行到此时再返回执行要修饰的函数的代码
+}
+event Laugh(string words)
+function laalal() external onlyOwner {
+ Laugh("lalalala")
+}
+```
