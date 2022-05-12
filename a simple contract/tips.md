@@ -55,3 +55,7 @@ function laalal() external onlyOwner {
  Laugh("lalalala")
 }
 ```
+
+### 省gas
+
+注意：uint的变种不会为你节省任何gas
