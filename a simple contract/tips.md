@@ -62,3 +62,19 @@ function laalal() external onlyOwner {
 
 注意：uint的变种不会为你节省任何gas
 ·view和pure函数在外部调用时不会承担gas费用，但改变状态的函数都需要消耗gas
+* 在数组后面加上memory关键字，表明这个数组仅在内存中创建，不需要写入外部存储
+
+### 函数修饰符
+* 可见性修饰符
+>private意味着只能被合约内部调用internal就像是private但也能被继承的合约调用；external只能从合约外部调用，public可以在任何地方调用
+
+* 状态修饰符 
+>函数如何与区块链交互。view代表不会更改和保存任何数据；pure代表不会写甚至也不会读取数据，这两种从合约外部调用时不花费任何gas，但被内部其他函数调用时会耗费gas
+
+* 自定义修饰符
+>可以自定义对函数的约束逻辑
+```solidity
+function test()external view onlyOwner anotherModifier{
+  
+}
+```
