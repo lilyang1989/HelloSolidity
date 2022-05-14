@@ -48,3 +48,41 @@ Iblablabla.sol
 
 ### 创建合约
 通过合约创建合约、通过钱包账户向0x00发送合约创建的操作来新建合约
+
+## 3 开发工作流与单元测试
+
+
+## 4 前端与客户端开发
+### 4.1框架选择
+ethers.js+react
+理解React hooks的概念
+### 4.2 搭建脚手架项目
+**推荐React+Next.js**
+### 4.3 前端与合约的交互流程
+准备好RelayNetwork里的access key
+
+### 4.4 前端依赖
+wagmi、useDApp、Siwe
+UI库：MUI、NextUI
+
+
+## 5 开发、测试与生产环境调试
+### 5.1开发环境调试
+借助hardhat-deploy，简单地使用--export-all导出所有被发布的合约ABI为一个完整的json文件
+ ### 5.2 测试与生产环境调试
+ 发布到公开测试网络或者用fork主网状态来充当测试环境
+
+ ## 6 服务端编码与集成
+ 需要编写服务端API的原因：链上状态储存的成本过高，以及反复的签名与交互对用户来说体验不佳
+
+ ### 6.1开发环境
+ 不复杂的DApp：Next.js
+ 依赖较多：FaaS
+
+ ### 6.2钱包登录
+ Siwe
+ ### 6.3 服务端与区块链的通信
+ dotenv
+ secret manager
+ ### 6.4 实用的SDK
+ thirdweb
