@@ -57,5 +57,8 @@ function laalal() external onlyOwner {
 ```
 
 ### 省gas
+>为什么会有gas？
+区块链的激励机制，作为付给运行节点的计算与存储费用
 
 注意：uint的变种不会为你节省任何gas
+·view和pure函数在外部调用时不会承担gas费用，但改变状态的函数都需要消耗gas
