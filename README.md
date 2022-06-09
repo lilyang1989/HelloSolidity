@@ -1,6 +1,8 @@
 # Solidity start up
 
-Self-maintained solidity learning repository.
+Self -maintained solidity learning repository.
+
+but hope it will walk you through the very basics of how to play the game ;)
 
 ## What's inside?                                -by 06/09/22
 
