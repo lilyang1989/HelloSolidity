@@ -1,8 +1,18 @@
+# Whats this for?
+
+check [this](https://guoyu.mirror.xyz/RD-xkpoxasAU7x5MIJmiCX4gll3Cs0pAd5iM258S1Ek).
+
+是我目前能找到的最好最权威的DappTutorial（dapplearning,buildspace,useweb3等人:礼貌你吗
+
+aight lets jump into it
+
 ## 2.1合约特征
+
 ### 事务性
 在合约中编写的函数要么全部被执行状态依次修改，要么全都回滚到未被修改的样子。（要活一起活，要完一起完）
 不应该对参数重载
 谨慎注意API的设计和进行错误处理。
+
 ### 错误处理
 ```solidity
 require(condition,ERR_MESSAGE)
