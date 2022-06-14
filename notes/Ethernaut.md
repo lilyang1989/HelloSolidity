@@ -6,9 +6,7 @@ using SafeMath for uint256;
 
 ### 什么是SafeMath
 
-
-
-
+利用SafeMath来检查整数溢出
 
 ### tx.origin和msg.sender的区别
 
