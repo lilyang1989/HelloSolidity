@@ -26,7 +26,9 @@ DeFi（0/9）
 
 跟着做的过程中一些心得体会
 
-### 3.一些琐碎知识点
+### 3.通过[Ethernaut](https://ethernaut.openzeppelin.com/)来学习智能合约审计
+
+### 4.一些琐碎知识点
 
 从各种奇奇怪怪的角落搜集到的一些关于solidity的小知识/tricks/whatever
 
