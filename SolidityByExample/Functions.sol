@@ -65,12 +65,11 @@ contract Function {
         return (i, b, j, x, y);
     }
 
-    // Cannot use map for either input or output
-
-    // Can use array for input
+    // 输入和输出都不能用map
+    //输入和输出都可以使用数组
     function arrayInput(uint[] memory _arr) public {}
 
-    // Can use array for output
+ 
     uint[] public arr;
 
     function arrayOutput() public view returns (uint[] memory) {
