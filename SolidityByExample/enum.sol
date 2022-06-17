@@ -11,8 +11,9 @@ contract Enum {
         Canceled
     }
 
-    // Default value is the first element listed in
-    // definition of the type, in this case "Pending"
+    // enum类型数据的默认值是你给出定义中的第一个
+    // 此例中为Pending
+    //不是内置（built in）的数据类型，是用刚刚上面定义的
     Status public status;
 
     // Returns uint
