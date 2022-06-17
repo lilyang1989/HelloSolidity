@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
-//有很多方式来返回函数的值
+//有很多种方式来返回函数的值
 contract Function {
     // Functions can return multiple values.
     function returnMany()
@@ -15,7 +15,7 @@ contract Function {
         return (1, true, 2);
     }
 
-    // Return values can be named.
+    // 返回的值可以被重命名
     function named()
         public
         pure
