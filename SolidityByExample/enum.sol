@@ -14,6 +14,21 @@ contract Enum {
     // enum类型数据的默认值是你给出定义中的第一个
     // 此例中为Pending
     //不是内置（built in）的数据类型，是用刚刚上面定义的
+    //想要转移状态：如从pending转到shipped  需要新建一个函数来实现
+    function ship() public{
+        require(status==Status.Pending);
+        //只有在pending的时候才会转移到shipped
+        status=Status.Shipped;
+
+    }
+    function acceptDelivery() public{
+    require(status==Status.Shipped);
+        status=Status.Accepted;
+    }
+    function rejectDelivery() public{
+    require(status==Status.Shipped);
+        status=Status.Rejected;
+    }
     Status public status;
 
     // Returns uint
