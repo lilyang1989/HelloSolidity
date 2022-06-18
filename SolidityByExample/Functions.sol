@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 //有很多种方式来返回函数的值
 contract Function {
-    // Functions can return multiple values.
+    // 函数可以返回多种不同的值
     function returnMany()
         public
         pure
@@ -28,8 +28,8 @@ contract Function {
         return (1, true, 2);
     }
 
-    // Return values can be assigned to their name.
-    // In this case the return statement can be omitted.
+    // 返回的值可直接安排到他们的名称上
+    // 此例中最后的return语句可以省略
     function assigned()
         public
         pure
@@ -43,9 +43,17 @@ contract Function {
         b = true;
         y = 2;
     }
-
-    // Use destructuring assignment when calling another
-    // function that returns multiple values.
+        //也可以用来返回调用的函数 比如一次性返回两个
+    function f()public returns(uint){
+        return 1;
+    }
+    function g()public returns(uint){
+        return 2;
+    }
+    function callTwo() public returns(uint,uint){
+        return (f(),g());
+    }
+    //当调用另一个返回多种数据类型的函数的时候采用解构赋值
     function destructuringAssignments()
         public
         pure
@@ -59,7 +67,7 @@ contract Function {
     {
         (uint i, bool b, uint j) = returnMany();
 
-        // Values can be left out.
+        // 在这种情况下，假如只需要第一、第三个变量 可以直接把第二个省略
         (uint x, , uint y) = (4, 5, 6);
 
         return (i, b, j, x, y);
