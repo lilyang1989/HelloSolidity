@@ -61,7 +61,34 @@ contract Compare {
     function withdelegatecall() public {
         testaddress.delegatecall(bytes4(keccak256("test()")));
         emit logb(b);
-    }//再执行此函数 此时的compare合约的b变成了compare合约地址 而上面的
+    }//再执行此函数 此时的compare合约的b变成了compare合约地址 而上面的call实际上还是在CALLtest合约中执行的test函数
 }
 ```
 
+而如果部署后直接执行withdelegatecall，查看结果可以发现只有Compare合约的b被改变了,进一步印证了上面说的，delegatecall只在合约compare内部执行了一下，这也是solidity实现类似库函数作用的方式。
+
+### 使用DelegationCall是很危险的,参见[这篇文章](https://blog.openzeppelin.com/on-the-parity-wallet-multisig-hack-405a8c12e8f7/)
+
+
+
+### selfdestruct函数
+
+这是一个自毁函数，当调用此函数时，会使合约无效化并删除该地址的字节码，然后把剩余的资金发送给参数指定的地址，并且该函数会无视fallback函数，而selfdestruct函数会无视这一点，也就是资金会优先由selfdestruct函数处理。
+
+
+
+### 所有数据都是 可读的，包括合约内定义为private的password变量
+
+可以使用web3.eth.getStorageAt来读取合约行对应地址的数据
+
+```solidity
+web3.eth.getStorageAt(address, position [, defaultBlock] [, callback])
+```
+
+第一个参数对应要读取的合约地址，  第二个参数是要读取内容的索引变量，第三个参数如果被设置，就不会使用默认的block（被web3.eth.defaultBlock设置的默认块），而是使用用户自定义的块，这个参数可选项有"earliest" "latest" "pending" 第四个选项设置回调函数
+
+注意：web3.js不能自动把string解析成byte32类型 因此需要使用web3.utils.asciiToHex转换一下
+
+用法：web3.utils.asciiToHex（“MyString”）
+
+web3.js里0x开头的字符串可以被认为是bytes32
