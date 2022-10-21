@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.13;
+pragma solidity ^0.8.6;
 // virtual 代表可以被子合约覆盖
 //override代表可以覆盖父合约
 //pure修饰的函数既不能改也不能读状态变量 否则编译无法通过
 //view只能读状态变量但不能改
-//super关键字将调用最近的父合约函数
+//super关键字将调用最近的父合约函数  or  it will call all parents functions?
 contract A{
     function foo() public pure virtual returns(string memory){
         return "A";
